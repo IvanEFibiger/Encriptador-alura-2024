@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    
+</head>
+<body>
+    <header class="header">
+        <div class="contenedor">
+            <div class="header_imagen">
+                <img src="./assets/logo.svg" alt="Logo de Alura">
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="contenedor">
+            <div class="encriptador">
+                <form class="encriptador_form">
+                    <div class="texto_usuario">
+                        <textarea name="text_in_area" id="texto_principal" placeholder="Ingrese el texto aqui" required></textarea>
+                        <div class="text_in_info">
+                            <div class="info">
+                                <img src="./assets/exclamacion.svg" alt="">
+                                <p id="advertencia">Solo letras minúsculas y sin acentos</p>
+                            </div>
+                            <div class="texto_botones">
+                                <input id="enc" type="button" value="Encriptar">
+                                <input id="des" type="button" value="Desencriptar">
+                            </div> 
+                        </div>
+                    </div>
+                </form>
+
+                <div class="texto_salida">
+                    <div class="contenido_salida">
+                        <div class="contenido" id="default">
+                            <div class="imagen_salida">
+                                <img src="./assets/muneco.svg" alt="Imagen de animada">
+                            </div><p>Ningún mensaje fue encontrado</p>
+                            <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                        </div>
+                        <div class = "contenido invisible" id="result">
+                            <textarea name="text_out_area" id="texto_out" disabled></textarea>
+                            <button id="copiar">Copiar</button>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="pie-pagina-contenido">
+            <p>© 2024 Todos los derechos reservados.</p>
+            
+            <a href="https://www.linkedin.com/in/ivanefibiger/" target="_blank" rel="noopener noreferrer"><img src="./assets/linkedin.png" class="pgn" alt="icono Linkedin"></a>
+            <a href="https://github.com//" target="_blank" rel="noopener noreferrer"><img src="./assets/github.png" class="pgn" alt="icono GitHub"></a>
+            <a href="https://www.instagram.com//" target="_blank" rel="noopener noreferrer"><img src="./assets/instagram.png" class="pgn" alt="icono Instagram"></a>
+            <p>Desarrollado por Iván Fibiger | Oracle+AluraLatam.</p>
+        </div>    
+    </footer>
+</body>
+</html>

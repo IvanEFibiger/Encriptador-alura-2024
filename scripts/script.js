@@ -118,6 +118,70 @@ const copy = document.querySelector('#copiar');
 // Tabla de traducción para encriptar y desencriptar
 var traduccion = {"a": "ai", "e": "enter", "i": "imes", "o": "ober", "u": "ufat"};
 
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Selecciona el botón para alternar el tema y el icono del tema
+    const toggleThemeBtn = document.getElementById('toggle-theme');
+    const themeIcon = document.getElementById('theme-icon');
+    
+    // Obtiene el tema actual del almacenamiento local o establece 'claro' como predeterminado
+    const currentTheme = localStorage.getItem('theme') || 'claro';
+
+    // Aplica el tema actual al cargar la página
+    if (currentTheme === 'oscuro') {
+        // Establece los colores para el tema oscuro
+        document.documentElement.style.setProperty('--color-primario', 'var(--color-primario-oscuro)');
+        document.documentElement.style.setProperty('--color-secundario', 'var(--color-secundario-oscuro)');
+        document.documentElement.style.setProperty('--color-terciario', 'var(--color-terciario-oscuro)');
+        document.documentElement.style.setProperty('--color-negro', 'var(--color-negro-oscuro)');
+        document.documentElement.style.setProperty('--color-gris', 'var(--color-gris-oscuro)');
+
+        // Cambia el icono para indicar que el tema actual es oscuro
+        themeIcon.textContent = 'light_mode'; // Mostrar icono de sol
+        // Añade la clase 'oscuro' al cuerpo del documento
+        document.body.classList.add('oscuro'); 
+    }
+
+    // Añade un evento de clic al botón para alternar el tema
+    toggleThemeBtn.addEventListener('click', function () {
+        // Alterna el tema entre 'claro' y 'oscuro'
+        const newTheme = (localStorage.getItem('theme') || 'claro') === 'claro' ? 'oscuro' : 'claro';
+
+        if (newTheme === 'oscuro') {
+            // Establece los colores para el tema oscuro
+            document.documentElement.style.setProperty('--color-primario', 'var(--color-primario-oscuro)');
+            document.documentElement.style.setProperty('--color-secundario', 'var(--color-secundario-oscuro)');
+            document.documentElement.style.setProperty('--color-terciario', 'var(--color-terciario-oscuro)');
+            document.documentElement.style.setProperty('--color-negro', 'var(--color-negro-oscuro)');
+            document.documentElement.style.setProperty('--color-gris', 'var(--color-gris-oscuro)');
+
+            // Cambia el icono para indicar que el tema actual es oscuro
+            themeIcon.textContent = 'light_mode'; // Mostrar icono de sol
+            // Añade la clase 'oscuro' al cuerpo del documento
+            document.body.classList.add('oscuro'); 
+        } else {
+            // Establece los colores para el tema claro
+            document.documentElement.style.setProperty('--color-primario', 'var(--color-primario-claro)');
+            document.documentElement.style.setProperty('--color-secundario', 'var(--color-secundario-claro)');
+            document.documentElement.style.setProperty('--color-terciario', 'var(--color-terciario-claro)');
+            document.documentElement.style.setProperty('--color-negro', 'var(--color-negro-claro)');
+            document.documentElement.style.setProperty('--color-gris', 'var(--color-gris-claro)');
+
+            // Cambia el icono para indicar que el tema actual es claro
+            themeIcon.textContent = 'dark_mode'; // Mostrar icono de luna
+            // Elimina la clase 'oscuro' del cuerpo del documento
+            document.body.classList.remove('oscuro'); 
+        }
+
+        // Guarda el nuevo tema en el almacenamiento local
+        localStorage.setItem('theme', newTheme);
+    });
+});
+
+
+
+
 // Agregar eventos a los botones
 enc.addEventListener('click', function() { encriptar(traduccion); });
 des.addEventListener('click', function() { desencriptar(traduccion); });

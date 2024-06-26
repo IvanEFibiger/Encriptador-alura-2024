@@ -80,8 +80,10 @@ function clipboard() {
 
 // Función auxiliar para verificar si el texto contiene caracteres inválidos
 function isTextoInvalido(texto) {
+    // Expresión regular que define los caracteres permitidos (letras minúsculas, espacios)
+    const caracteresPermitidos = /^[a-z\s]*$/;
     // Expresión regular que define los caracteres permitidos (letras minúsculas, espacios y signos de puntuación)
-    const caracteresPermitidos = /^[a-z\s?!.,]*$/;
+    // const caracteresPermitidos = /^[a-z\s?!.,]*$/;
     return !caracteresPermitidos.test(texto);
 }
 
